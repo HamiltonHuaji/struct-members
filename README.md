@@ -10,6 +10,16 @@
 #include "inspect.hpp"
 
 // ...
+namespace some_namespace{
+    template<typename NotTooComplexArg>
+    struct [[reflectable]] some_templated_class{};
+
+    template<>
+    struct [[reflectable]] some_templated_class<some_template_args>{
+        int some_member_variable;
+    };
+}
+// ...
 
 #ifndef analysis
 #define analysis
